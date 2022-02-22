@@ -6,7 +6,12 @@ jobs:
       - image: cimg/base:edge
     steps:
       - checkout
-      - run: echo "test"
+      - run:
+          name: Check if PR
+          command: |
+            if [[ ! -z "$CIRCLE_PULL_REQUEST" ]]; then
+              echo "PR"
+            fi
 
 workflows:
   workflow1:
