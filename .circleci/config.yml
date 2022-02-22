@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Check if PR
-          command: |
+          command: | 
             if [[ -z "$CIRCLE_PULL_REQUEST" ]]; then
               echo "This was not triggered by a PR. The build will now exit"
               circleci-agent step halt
